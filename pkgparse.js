@@ -1,10 +1,5 @@
 #!/usr/bin/env node
 
-var getDependencies = require('./lib/getDependencies')
-var moduleLookup = require('./lib/moduleLookup')
-var dependencyLookup = require('./lib/dependencyLookup')
-var visitNPM = require('./lib/visitNPM')
-var examples = require('./lib/examples')
 var program = require('commander')
 var chalk = require('chalk')
 
@@ -22,8 +17,6 @@ program
 if (program.examples) {
   examples()
 }
-
-  // User invokes a flag and successfully passes in parameters
 
 if (program.file && program.search) {
   console.log(chalk.yellow("Running file and search together does nothing. Nice try though!"))
@@ -59,8 +52,6 @@ if (program.open && program.rawArgs[3]) {
   visitNPM([program.open], program.rawArgs[4])
   process.exit(1)
 }
-
-// User invokes a flag without any parameters
 
 if (program.search && !program.rawArgs[3]) {
   program.help()

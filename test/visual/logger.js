@@ -2,6 +2,7 @@ var logger = require('../../lib/visual/logger')
 var test = require('tape')
 var stdout = require('test-console').stdout
 var stderr = require('test-console').stderr
+var logTest = require('./logTest')
 
 test('logger output is a string', function(t) {
   var output = stdout.inspectSync(function() {
@@ -11,7 +12,7 @@ test('logger output is a string', function(t) {
   t.end()
 })
 
-test('logger outputs what it is given (no colour)', function(t) {
+test('logger outputs provided text without a colour parameter', function(t) {
   var output = stdout.inspectSync(function() {
     logger('test')
   })
@@ -19,10 +20,10 @@ test('logger outputs what it is given (no colour)', function(t) {
   t.end()
 })
 
-test('logger outputs what it is given (with color)', function(t) {
+test('logger outputs provided text in red', function(t) {
   var output = stdout.inspectSync(function() {
     logger('test', 'red')
   })
-  t.deepEqual(output, ['test\n'])
+  t.deepEqual(output, ['\x1b[31mtest\x1b[39m\n'])
   t.end()
 })

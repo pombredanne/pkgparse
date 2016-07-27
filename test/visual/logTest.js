@@ -1,12 +1,8 @@
-var stdout = require('test-console').stdout
-var stderr = require('test-console').stderr
+var logger = require('../../lib/visual/logger')
+var test = require('tape')
+var logTest = require('../../lib/visual/logTest')
 
-function logTest(logFunction) {
-    return (
-      stdout.inspectSync(function() {
-        logFunction
-      })
-    )
-}
-
-module.exports = logTest
+test('logTest returns a string', function(t) {
+  t.equal(typeof logTest('test'), 'string')
+  t.end()
+})

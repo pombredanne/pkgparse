@@ -5,7 +5,7 @@
   "main": "pkgparse.js",
   "scripts": {
     "start": "node pkgparse",
-    "test": "node test/visual/*.js | tap-spec"
+    "test": "tape 'test/**/*.js' | tap-spec"
   },
   "bin": {
     "pkgparse": "pkgparse.js"

@@ -1,8 +1,8 @@
 var logger = require('../../lib/visual/logger')
 var test = require('tape')
-var logTest = require('../../lib/visual/logTest')
+var loggerOutputTest = require('../../lib/visual/loggerOutputTest')
 
 test('logTest returns a string', function(t) {
-  t.equal(typeof logTest('test'), 'string')
+  t.equal(typeof loggerOutputTest('test'), 'string')
   t.end()
 })

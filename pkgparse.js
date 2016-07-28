@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var program = require('commander')
-var chalk = require('chalk')
+const program = require('commander')
+const chalk = require('chalk')
 
 program
   .version('0.2.0')
@@ -29,7 +29,7 @@ if (program.file && !program.rawArgs[3]) {
 
 if (program.file && program.rawArgs[3]) {
   if (program.rawArgs[3].charAt(0) == '~') {
-    var dirpath = program.rawArgs[3].slice(1)
+    const dirpath = program.rawArgs[3].slice(1)
     getDependencies(process.env.HOME + dirpath)
   } else {
     getDependencies(program.rawArgs[3])

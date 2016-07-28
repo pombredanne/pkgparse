@@ -1,8 +1,8 @@
-var loggerTest = require('../../lib/visual/loggerTest')
-var test = require('tape')
-var stdout = require('test-console').stdout
-var stderr = require('test-console').stderr
-var loggerTest = require('../../lib/visual/loggerTest')
+const loggerTest = require('../../lib/visual/loggerTest')
+const test = require('tape')
+const stdout = require('test-console').stdout
+const stderr = require('test-console').stderr
+const loggerTest = require('../../lib/visual/loggerTest')
 
 test('logger output is a string', function(t) {
   t.equal(typeof loggerTest('test'), 'string')
